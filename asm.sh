@@ -9,7 +9,7 @@
 # from -macosx_version_min 10.12 to your current OSX version    # 
 # ------------------------------------------------------------- #
 
-# set your Mac OSX version
+# set your Mac OSX version:
 MacOSX="10.12"
 
 # get command line parameters
