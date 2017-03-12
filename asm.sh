@@ -9,6 +9,9 @@
 # from -macosx_version_min 10.12 to your current OSX version    # 
 # ------------------------------------------------------------- #
 
+# set your Mac OSX version
+MacOSX="10.12"
+
 # get command line parameters
 prmProgramName="$1"
 prmNorun="$2"
@@ -62,7 +65,7 @@ else
 fi   
 
 echo -n "Linking... "
-ld $baseName.o -e _main -lc -macosx_version_min 10.12 -o $baseName -arch i386 -no_pie
+ld $baseName.o -e _main -lc -macosx_version_min $MacOSX -o $baseName -arch i386 -no_pie
 if [ $? == 0 ] ; then # if exit code is zero
    echo "Ok"
 else
