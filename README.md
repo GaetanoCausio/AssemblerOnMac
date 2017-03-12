@@ -53,8 +53,26 @@ lldb hello
 ```
 <img src="images\HelloLldb.png" alt="Debug Hello Program"  width="763" height="359"> 
 
+| Debug Command | Description  |
+| ------------- | ------------- |
+| `b main` | Set a breakpoint at the start symbol (*main*) of a program  |
+| `run` |  Run code till a breakpoint is found |
+| `run par1 par2` | Run code using input parameters  |
+| `b 0x1f8d` |  Set breakpoint at line number  0x1f8d  |
+| `s` | Step into instruction (i.e. step into a `call` statement)   |
+| `n` | Step over instruction (i.e. step over a `call` statement)   |
+| `c` |   continue execution till a breakpoint is found |
+| `q` | Terminate execution and exit lldb |
+| `register read` |  Show content of main registers  (abbreviated `re r`)|
+| `re read esp eat` | Show content of `esp` and `tax` register   |
+| `re write eax 0xF12F` |  Write content to `tax` register |
+| `memory read 0xbffffb8c` | Read content of memory address  |
+| `x 0xbffffb8c` | Same as `memory read`, abbreviated form  |
+| `x --count 100 0xbffffb8c` | Read 100 bytes from memory address  0xbffffb8c |
+| `gui` |  When entered after  `run` show debugger in a GUI  |
+
 ## Some handy shell commands
-| | |
+| Command | Description  |
 | ------------- | ------------- |
 | `hexdump -C FileName` | Hexadecimal dump of *FileName*. Tip: pipe using `head -n10`  |
 | `gcc -S prg.c -m32 -Os` | Generate assembly code from a C program |
