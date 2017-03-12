@@ -16,7 +16,7 @@ A list of sample Assembly programs that demonstrate how to program using machine
 ## Prerequisites
 Please note that you need to have the unix `as` (Assembler) and `ld` (Linker) utilities to use the sample programs included in this project. These utilities are automatically installed via the command line developers tools included in Xcode. The easiest way to install them is to  open terminal and run the `ld` command, if you don't have them you should get a prompt to start install.
 
-<img src="images\InstallTools.png" alt="Install Tools">
+<img src="images\InstallTools.png" alt="Install Tools"  width="463" height="195" >
 
 ## Usage
 
@@ -35,14 +35,14 @@ This utility will automatically call `as` to compile an assembly source code int
 ```
 ./asm.sh hello.s
 ```
-<img src="images\HelloCompile.png" alt="Compile Hello Program">
+<img src="images\HelloCompile.png" alt="Compile Hello Program" width="600" height="278">
 
 This will produce an `hello.o` object code and an `hello` executable. This last one can also be directly started from the command line:
 
 ```
 ./hello
 ```
-<img src="images\HelloRun.png" alt="Run Hello Program">
+<img src="images\HelloRun.png" alt="Run Hello Program"  width="600" height="59">
 
 ## Debug assembly code
 
