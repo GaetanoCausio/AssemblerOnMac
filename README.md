@@ -51,7 +51,7 @@ You can use `lldb` to debug an executable program. For example the following com
 ```sh
 lldb hello
 ```
-<img src="images\HelloLldb.png" alt="Debug Hello Program"  width="359" height="46"> 
+<img src="images\HelloLldb.png" alt="Debug Hello Program"  width="763" height="359"> 
 
 ## Some handy shell commands
 | | |
