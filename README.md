@@ -26,10 +26,35 @@ Use the included shell script utility `asm.sh` to compile, link and run assembly
 asm filename [norun] [parameters]  
 
 - filename   = name of your assemply code program
-- noun      = use <norun> if you just need to compile & link without running it
+- norun      = use <norun> if you just need to compile & link without running it
 - parameters = pass any parameters to your assembly program
 ```
 
+This utility will automatically call `as` to compile an assembly source code into an object code program (.o). It will then call the linker `ld` to create an executable from the object code. For example this will compile, link and run *hello.s* assembly code:
+
+```
+./asm.sh hello.s
+```
+<img src="images\HelloCompile.png" alt="Compile Hello Program">
+
+This will produce an `hello.o` object code and an `hello` executable. This last one can also be directly started from the command line:
+
+```
+./hello
+```
+<img src="images\HelloRun.png" alt="Run Hello Program">
+
+## Debug assembly code
+
+You can use `lldb` to debug an executable program.
+
+## Some handy shell commands
+| | |
+| ------------- | ------------- |
+| `hexdump -C FileName` | Hexadecimal dump of *FileName*. Tip: pipe using `head -n10`  |
+| `gcc -S prg.c -m32 -Os` | Generate assembly code from a C program |
+| `lldb Program` | Debug an executable program |
+ 
 ## What's Next
 Even more sample code...
 
