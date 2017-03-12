@@ -35,14 +35,14 @@ This utility will automatically call `as` to compile an assembly source code int
 ```
 ./asm.sh hello.s
 ```
-<img src="images\HelloCompile.png" alt="Compile Hello Program" width="600" height="278">
+<img src="images\HelloCompile.png" alt="Compile Hello Program" width="463" height="215">
 
 This will produce an `hello.o` object code and an `hello` executable. This last one can also be directly started from the command line:
 
 ```
 ./hello
 ```
-<img src="images\HelloRun.png" alt="Run Hello Program"  width="600" height="59">
+<img src="images\HelloRun.png" alt="Run Hello Program"  width="463" height="46">
 
 ## Debug assembly code
 
