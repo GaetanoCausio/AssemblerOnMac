@@ -22,7 +22,7 @@ Please note that you need to have the unix `as` (Assembler) and `ld` (Linker) ut
 
 Use the included shell script utility `asm.sh` to compile, link and run assembly code. Format is:
 
-```
+```sh
 asm filename [norun] [parameters]  
 
 - filename   = name of your assemply code program
@@ -30,23 +30,28 @@ asm filename [norun] [parameters]
 - parameters = pass any parameters to your assembly program
 ```
 
-This utility will automatically call `as` to compile an assembly source code into an object code program (.o). It will then call the linker `ld` to create an executable from the object code. For example this will compile, link and run *hello.s* assembly code:
+This utility will automatically call `as` to compile an assembly source code into an object code program (.o). It will then call the linker `ld` to create an executable from the object code. For example following command will compile, link and run *hello.s* assembly code:
 
-```
+```sh
 ./asm.sh hello.s
 ```
 <img src="images\HelloCompile.png" alt="Compile Hello Program" width="463" height="215">
 
-This will produce an `hello.o` object code and an `hello` executable. This last one can also be directly started from the command line:
+This will produce `hello.o` object code and `hello` executable. This last one can also be directly started from the command line:
 
-```
+```sh
 ./hello
 ```
 <img src="images\HelloRun.png" alt="Run Hello Program"  width="463" height="46">
 
 ## Debug assembly code
 
-You can use `lldb` to debug an executable program.
+You can use `lldb` to debug an executable program. For example the following command will start a debug session:
+
+```sh
+lldb hello
+```
+<img src="images\HelloLldb.png" alt="Debug Hello Program"  width="359" height="46"> 
 
 ## Some handy shell commands
 | | |
