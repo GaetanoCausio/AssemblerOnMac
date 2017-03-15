@@ -90,6 +90,5 @@ lldb hello
 ## What's Next
 Even more sample code...
 
-<BR>    
----
+***
 *A continuos learning path where passion is the drive.*
