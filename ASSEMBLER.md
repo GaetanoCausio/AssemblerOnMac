@@ -45,6 +45,26 @@ Please note that registers are named based on the target architecture of your co
 `EAX ECX EDX EBX ESP EBP ESI EDI` for 32bit architecture     
 `AX  CX  DX  BX  SP  BP  SI  DI` for 16bit architecture     
 
+Registers have a special meaning and usage in Assembly langauage, it is therefore a good habit to save their content (via a push) before you change them, and then restore them back (via a pop) when done.
+
+```asm
+eax: Accumulator
+ebx: Base index (i.e. arrays)
+ecx: Counter (i.e. loops)
+edx: Extend the precision of the accumulator
+esi: Source index
+edi: Destination index
+esp: Stack pointer 
+ebp: Stack base pointer 
+eip: Instruction pointer 
+cs:  Code segment
+ds:  Data segment
+ss:  Stack segment
+es:  Extra data segment
+fs:  Extra data #2 segment
+gs:  Extra data #3 segment
+eFlags: Boolean values to store the results of operations
+```
 
 
 **Basic Instructions**
@@ -68,7 +88,7 @@ jmp  _endProg          # unconditional jump to address of _endProg
 
 You can best debug assembly program `operations.s` to see more details on how it works.
 
-Please note that instructions may be suffixed based on your target architecture:
+Also note that instructions may be suffixed based on your target architecture:
 
 `movq` for 64bit architecture     
 `movl` or `mov` for 32bit architecture     
@@ -79,14 +99,14 @@ Please note that instructions may be suffixed based on your target architecture:
 It is very important to understand how the stack memory works to be able to properly code in assembly.
 The stack is used when parameters are passed to your program or when you call a subroutine. By using `push` you can add data to the stack, while using `pop` gets data from the stack. You can also directly access the stack as the `%esp` register is actually a pointer to the stack itself. Once a program is started or control is given to a subroutine `%esp` always point to the return address. When parameters are used the stack will point to the total number of arguments and to the location in memory where these arguments are stored to. Therefore a standard stack layout is as follow:
 
-```
+```asm
 (%esp)    -> return address
 4(%esp)   -> number of parameters being passed (argc) 
 8(%esp)   -> memory location where parameters are stored to (argv)
 ```
 Please note that `4(%esp)` **argc** also includes the program name as first parameter. And also note that `8(%esp)` **argv** actually points to a memory location containing two address: first one to the name of the program, the second one to the actual parameters:
 
-```
+```asm
 (argv)    ->  memory location where program name is stored
 4(argv)   ->  memory location where actual parameters are stored
 ```
@@ -95,6 +115,14 @@ This should become clear with an example. Debug the `hello` executable and pass 
 
 <img src="images\StackMemory.png" alt="Stack Memory"  width="933" height="537">
 
+The layout of the stack may vary based on the specification of the function being called. For example for `_printf` it uses the following structure:
+
+```asm
+(%esp)    -> address of the string to be displayed
+4(%esp)   -> first argument passed to a formatted string 
+8(%esp)   -> second argument passed to a formatted string 
+```
+See sample assembly code  `formatstring.s`.
 
 ## Usefull Links
 
