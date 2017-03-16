@@ -12,7 +12,7 @@
 # program internal memory
 # -----------------------
 
-message:   .asciz    "This is a %s String with a number: %d  \n"
+message:   .asciz    "This is a %s String with a number: %03d  \n"
 
 param1:    .asciz    "formatted"
 param2:    .long     0x23       # 35
