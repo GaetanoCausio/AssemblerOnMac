@@ -115,14 +115,42 @@ This should become clear with an example. Debug the `hello` executable and pass 
 
 <img src="images\StackMemory.png" alt="Stack Memory"  width="933" height="537">
 
-The layout of the stack may vary based on the specification of the function being called. For example for `_printf` it uses the following structure:
+The layout of the stack may vary based on the specification of the function being called. For example for `_printf` uses the following structure:
 
 ```asm
 (%esp)    -> address of the string to be displayed
 4(%esp)   -> first argument passed to a formatted string 
-8(%esp)   -> second argument passed to a formatted string 
+8(%esp)   -> second argument passed to a formatted string ... and so on ...
 ```
-See sample assembly code  `formatstring.s`.
+See sample assembly code in  `formatstring.s`.
+
+### Important Note
+
+On Mac OS X the stack pointer needs to be always aligned to a 16-byte boundary prior to a function call.
+i.e. `%esp` should always be 0xnnnnnnn0 at the point of function call.  Take this into consideration when reserving area from the stack. See examples below:
+
+```asm
+_main:           # at program start esp = 16byte boundary - 4 (return address)                            
+   push   %ebp   # save base-pointer register 
+   sub   $8, %esp            # reserve bytes from the stack to call _printf
+
+```
+## Internal Variables
+
+In assembly you can generate data of various format using the following directives:
+
+```asm
+.ascii   -> a sequence of ASCII characters
+.asciz   -> fsame as .ascii but the string is terminated with a null character \0
+.byte    -> generate a 1 byte expression
+.short   -> generate a 2 bytes expression
+.long    -> generate a 3 bytes expression
+.quad    -> generate a 4 bytes expression
+.single  -> generate  a single-precision floating point number (4 bytes)
+.double  -> generate double-precision floating point number (8 bytes)
+```
+
+See some examples in sample code `formatstring.s`.
 
 ## Usefull Links
 
