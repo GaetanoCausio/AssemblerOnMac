@@ -40,20 +40,26 @@ _displayParameters:               # Function #
 
 # Display parameters from %ebp on standard out
 
-# input:  %ebp register must points to the start of command line parameters
+# input:  %ebp register points to the start of command line parameters
 # output: %eax contains exit code
 
     sub    $20, %esp              # reserve bytes from the stack to call _printf
 
-    mov    (%ebp), %edi           # %edi = total numberof parameters (argc)
+# verify and get input data
+# -------------------------
+
+    mov    (%ebp), %edi           # %edi = total number of parameters (argc)
     mov    4(%ebp), %esi          # %esi = memory address of parameters array (argv)          
     lea    -4(%esi,%edi,4), %esi  # %esi = point to last element in argv array
 
     dec    %edi                   # check if any input parameters (excl. program name)
-    jz     _noParameters          # if no parameters jump to end program
+    jz     _noParameters          # if no parameters, display message and exit
 
-    lea    message, %eax          # get memory address of message...
+    lea    message, %eax          # get memory address of message string...
     mov    %eax, (%esp)           # ...and store it into _printf parameters stack (%esp)
+
+# loop to display each parameter on separate line
+# -----------------------------------------------
 
 _loop:
 
@@ -69,15 +75,20 @@ _loop:
 
     jnz    _loop                  # repeat while parameters left
 
-    jmp    _endFunction           # no more parameters, end of program
+    jmp    _endFunction           # no more parameters, exit function
+
+# display message no parameters present and exit
+# ----------------------------------------------
 
 _noParameters:
 
-    lea    noParams, %eax         # get memory address of message...
+    lea    noParams, %eax         # get memory address of message string...
     mov    %eax, (%esp)           # ...and store it into _printf parameters stack (%esp)
 
     call   _printf                # print formatted string 
 
+# exit function
+# -------------
 
 _endFunction:
 
