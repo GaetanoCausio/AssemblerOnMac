@@ -3,6 +3,8 @@
 #                                                               #
 # Sample assembly program. It display a string on console by    #
 # calling the _printf subroutine.                               #
+#                                                               #
+# GitHub: https://github.com/GaetanoCausio/AssemblerOnMac       #
 # ------------------------------------------------------------- #
 
     .globl  _main               # set start point of program

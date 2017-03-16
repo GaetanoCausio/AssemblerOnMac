@@ -2,6 +2,8 @@
 # operationss.s v1.0 (c) 2017 Gaetano Causio                    #
 #                                                               #
 # Sample assembly program to show use of common instructions    #
+#                                                               #
+# GitHub: https://github.com/GaetanoCausio/AssemblerOnMac       #
 # ------------------------------------------------------------- #
 
     .globl  _main               # set start point of program
