@@ -130,10 +130,10 @@ On Mac OS X the stack pointer needs to be always aligned to a 16-byte boundary p
 i.e. `%esp` should always be 0xnnnnnnn0 at the point of function call.  Take this into consideration when reserving area from the stack. See examples below:
 
 ```asm
-_main:           # at program start esp = 16byte boundary - 4 (return address)                            
-   push   %ebp   # save base-pointer register 
-   sub   $8, %esp            # reserve bytes from the stack to call _printf
-
+_main:           -> at program start esp = 16-byte boundary - 4 (return address)                            
+   push %ebp     -> a resister is pushed into the stack, esp = esp - 4 (pushed address)  
+   sub  $8,%esp  -> to align esp to 16-bytes we need to subtract 8 bytes more (i.e. hello.s)
+   sub  $24,%esp -> or subtract 24 bytes if more stack area is needed (i.e. formatstring.s)
 ```
 ## Internal Variables
 
@@ -148,9 +148,10 @@ In assembly you can generate data of various format using the following directiv
 .quad    -> generate a 4 bytes expression
 .single  -> generate  a single-precision floating point number (4 bytes)
 .double  -> generate double-precision floating point number (8 bytes)
+.align 3,0 -> align at 2^3 (8) byte alignment, zeroes fill
 ```
 
-See some examples in sample code `formatstring.s`.
+See some examples in sample code `formatstring.s`
 
 ## Usefull Links
 
