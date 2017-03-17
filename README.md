@@ -11,6 +11,10 @@ A list of sample Assembly programs that demonstrate how to program using machine
 | Program  | Description |
 | ------------- | ------------- |
 | `hello.s`  | Have a look at this first *Hello World* assembly code |
+| `formatstring.s`  | Display a formatted string on screen |
+| `parameters.s`  | It shows usage of parameters when calling a program or function  |
+| `operations.s`  | Sample program to debug of common instructions  |
+| `registers.s` |  Assembly program to show addressing of registers |
 
 
 ## Prerequisites
@@ -78,6 +82,7 @@ lldb hello
 | `memory read 0xbffffb8c` | Read content of memory address  |
 | `x 0xbffffb8c` | Same as `memory read`, abbreviated form  |
 | `x --count 100 0xbffffb8c` | Read 100 bytes from memory address  0xbffffb8c |
+| `watch set e 0x1f67` | watch changes at memory address (breakpoint) |
 | `gui` |  When entered after  `run` show debugger in a GUI  |
 
 ## Some handy shell commands
