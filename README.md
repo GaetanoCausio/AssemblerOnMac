@@ -6,7 +6,7 @@
 [![Shippable](https://img.shields.io/badge/tests-passing-green.svg)]()
 [![Shippable](https://img.shields.io/badge/license-apache%202.0-blue.svg)]()
 
-A list of sample Assembly programs that demonstrate how to program using machine code instructions. Each program in this project is well self documented. Using this README.md to get started, then jump to [ASSEMBLER.MD](ASSEMBLER.MD) to go further.
+A list of sample Assembly programs that demonstrate how to program using machine code instructions. Each program in this project is well self documented. Using this README.md to get started, then jump to [ASSEMBLER.md](ASSEMBLER.md) to go further.
 
 | Program  | Description |
 | ------------- | ------------- |
