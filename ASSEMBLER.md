@@ -104,10 +104,10 @@ Once a program is started or control is given to a function `%esp` always point 
 
 ```asm
 (%esp)    -> return address
-4(%esp)   -> number of parameters being passed (argc) 
-8(%esp)   -> memory location where parameters are stored to (argv)
+4(%esp)   -> total number of parameters being passed (argc) -> program name + command line parameters
+8(%esp)   -> memory location where parameters are stored to (argv) -> adrs. program name + adrs. parameters 
 ```
-Please note that `4(%esp)` **argc** also includes the program name as first parameter. And also note that `8(%esp)` **argv** actually points to a memory location containing two address: first one to the name of the program, the second one to the actual parameters:
+Please note that `4(%esp)` **argc** also includes the program name in de count, as this is always the first parameter pointed by `8(%esp)` **argv**. Actually **argv** always points to a memory location containing two addresses: first one to the name of the program, the second one to the actual parameters:
 
 ```asm
 (argv)    ->  memory location where program name is stored
