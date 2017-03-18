@@ -24,16 +24,17 @@ Finally run the executable by typing:
 
 ## The Assembly Language
 
-You can find the complete reference to the Mac OS X Assembler [here](https://developer.apple.com/library/mac/documentation/DeveloperTools/Reference/Assembler/). 
+You can find the complete reference to the Mac OS X Assembler [here](https://developer.apple.com/library/mac/documentation/DeveloperTools/Reference/Assembler/). I will just highlight some of the most important aspect of coding in Assembly. 
 
-I will just highlight some of the most important aspect of coding in Assembly. 
+**Addressing Registers**
+
 First of all Assembly makes extensive use of **registers** like `%esp`, `%eax` and so on. These contains either direct values or addresses to memory locations containing values. Registers are named based on the target architecture of your compiled assembly code:
 
 `RAX RCX RDX RBX RSP RBP RSI RDI` for 64bit architecture     
 `EAX ECX EDX EBX ESP EBP ESI EDI` for 32bit architecture     
 `AX  CX  DX  BX  SP  BP  SI  DI` for 16bit architecture     
 
-**Addressing Registers**
+Registers are mostly use to address memory area locations, her some examples:
 
 ```asm
 %esp             # refers to value of %esp register
