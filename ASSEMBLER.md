@@ -130,13 +130,13 @@ See sample assembly code in  `formatstring.s`.
 ### Important Note
 
 On Mac OS X the stack pointer needs to be always aligned to a 16-byte boundary prior to a function call.
-i.e. `%esp` should always be 0xnnnnnnn0 at the point of function call.  Take this into consideration when reserving area from the stack. See examples below:
+i.e. `%esp` should always be 0xnnnnnnn0 at the point of function call.  Take this into consideration when reserving area from the stack:
 
 ```asm
 _main:           -> at program start esp = 16-byte boundary - 4 (return address)                            
    push %ebp     -> a resister is pushed into the stack, esp = esp - 4 (pushed address)  
-   sub  $8,%esp  -> to align esp to 16-bytes we need to subtract 8 bytes more (i.e. hello.s)
-   sub  $24,%esp -> or subtract 24 bytes if more stack area is needed (i.e. formatstring.s)
+   sub  $8,%esp  -> to align esp to 16-bytes we need to subtract 8 bytes more (see hello.s)
+   sub  $24,%esp -> or subtract 24 bytes if more stack area is needed (see formatstring.s)
 ```
 ## Internal Variables
 
