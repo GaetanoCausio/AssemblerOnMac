@@ -116,7 +116,7 @@ Please note that `4(%esp)` **argc** also includes the program name in de count, 
 
 This should become clear with an example. Debug the `hello` executable and pass some parameters to it:
 
-<img src="images\StackMemory.png" alt="Stack Memory"  width="933" height="537">
+<img src="images\StackMemory.png" alt="Stack Memory"  width="933" height="352">
 
 The layout of the stack may vary based on the specification of the function being called. For example for `_printf` uses the following structure:
 
