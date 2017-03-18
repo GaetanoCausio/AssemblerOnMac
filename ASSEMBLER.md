@@ -118,7 +118,7 @@ This should become clear with an example. Debug the `hello` executable and pass 
 
 <img src="images\StackMemory.png" alt="Stack Memory"  width="933" height="352">
 
-The layout of the stack may vary based on the specification of the function being called. For example for `_printf` uses the following structure:
+The layout of the stack may vary based on the specification of the function being called. For example `_printf` expect the following structure of the stack:
 
 ```asm
 (%esp)    -> address of the string to be displayed
