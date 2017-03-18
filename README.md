@@ -6,7 +6,7 @@
 [![Shippable](https://img.shields.io/badge/tests-passing-green.svg)]()
 [![Shippable](https://img.shields.io/badge/license-apache%202.0-blue.svg)]()
 
-A list of sample Assembly programs that demonstrate how to program using machine code instructions. Each program in this project is well self documented. Using this README.md to get started, then jump to [ASSEMBLER.md](ASSEMBLER.md) to go further.
+A list of sample Assembly programs that demonstrate how to program using machine code instructions. Each program in this project is well self documented. Use this README.md to get started, then jump to [ASSEMBLER.md](ASSEMBLER.md) to go further.
 
 | Program  | Description |
 | ------------- | ------------- |
@@ -34,7 +34,7 @@ asm filename [norun] [parameters]
 - parameters = pass any parameters to your assembly program
 ```
 
-This utility will automatically call `as` to compile an assembly source code into an object code program (.o). It will then call the linker `ld` to create an executable from the object code. As an example the following command will compile, link and run *hello.s* assembly code:
+This utility will automatically call `as` to compile an assembly source code into an object code program (.o). It will then call the linker `ld` to create an executable from the object code. As an example the following command will compile, link and run `hello.s` assembly code:
 
 ```sh
 ./asm.sh hello.s
@@ -50,7 +50,7 @@ This will produce `hello.o` object code and `hello` executable. This last one ca
 
 **Important Note**
 
-You may need to specify which version of Mac OS X are you using in `asm.sh` script :
+You may need to specify which version of Mac OS X you are using in `asm.sh` script :
 
 ```sh
 # set your Mac OSX version:
@@ -84,6 +84,9 @@ lldb hello
 | `x --count 100 0xbffffb8c` | Read 100 bytes from memory address  0xbffffb8c |
 | `watch set e 0x1f67` | watch changes at memory address (breakpoint) |
 | `gui` |  When entered after  `run` show debugger in a GUI  |
+
+TIP: After entering a `run` command in `lldb` try using the `gui` command as well... :
+<img src="images\GUIDebugger.png" alt="Debug Hello Program"  width="763" height="436"> 
 
 ## Some handy shell commands
 | Command | Description  |
