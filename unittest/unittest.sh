@@ -1,4 +1,5 @@
 #!/bin/bash
+shopt -s expand_aliases
 
 # ------------------------------------------------------------- #
 # unittest.sh v1.1 (c) 2017 Gaetano Causio                      #
@@ -10,19 +11,27 @@
 echo "unittest v1.0 (c) 2017 Gaetano Causio"
 echo
 
-echo "Unit Tests" >unittest.out
+# filter out all escape sequences and convert output to plain ASCII
+# alias FilterOut="sed 's/[\x01-\x1F\x7F]//g' | iconv -c -t ascii"
+alias FilterOut="cat -v | iconv -c -t ascii"
+
+echo "Unit Tests" | FilterOut >unittest.out
    
-# Start Unit Tests
-# ----------------
+# process all assembly (*.s) files found
+# --------------------------------------
 
 for f in ../*.s; do 
+   # perform unit test of program with and without parameters
    echo "Testing $f"
-   echo "Starting test for $f" >>unittest.out
-   ../asm.sh $f ABC 123 "just a test" >>unittest.out
-   ../asm.sh $f >>unittest.out   
+   echo "Starting test for $f" | FilterOut >>unittest.out
+   ../asm.sh $f ABC 123 "just a test" | FilterOut >>unittest.out
+   ../asm.sh $f | FilterOut >>unittest.out   
 done
 
-echo "END" >>unittest.out
+echo "END"  | FilterOut >>unittest.out
+
+# compute MD5 hash codes and compare them
+# ---------------------------------------
 
 md5Old=$(md5 -q unittest.base)
 md5New=$(md5 -q unittest.out)

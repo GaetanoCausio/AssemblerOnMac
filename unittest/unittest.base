@@ -2,7 +2,7 @@ Unit Tests
 Starting test for ../formatstring.s
 asm v1.1 (c) 2017 Gaetano Causio
 
-Compile, link and run for assemply code: [1m../formatstring.s[m
+Compile, link and run for assemply code: ^[[1m../formatstring.s^[[m
 
 Compiling... Ok
 Linking... Ok
@@ -10,10 +10,10 @@ Running with parameters: ABC 123 just a test
 
 This is a formatted String with a number: 035  
 
-Completed. 👍 
+Completed. M-^_M-^QM-^M 
 asm v1.1 (c) 2017 Gaetano Causio
 
-Compile, link and run for assemply code: [1m../formatstring.s[m
+Compile, link and run for assemply code: ^[[1m../formatstring.s^[[m
 
 Compiling... Ok
 Linking... Ok
@@ -21,55 +21,55 @@ Running:
 
 This is a formatted String with a number: 035  
 
-Completed. 👍 
+Completed. M-^_M-^QM-^M 
 Starting test for ../hello.s
 asm v1.1 (c) 2017 Gaetano Causio
 
-Compile, link and run for assemply code: [1m../hello.s[m
+Compile, link and run for assemply code: ^[[1m../hello.s^[[m
 
 Compiling... Ok
 Linking... Ok
 Running with parameters: ABC 123 just a test     
 
-Hello, Yes We Can! 🍀 
+Hello, Yes We Can! M-^_M-^MM-^@ 
 
-Completed. 👍 
+Completed. M-^_M-^QM-^M 
 asm v1.1 (c) 2017 Gaetano Causio
 
-Compile, link and run for assemply code: [1m../hello.s[m
+Compile, link and run for assemply code: ^[[1m../hello.s^[[m
 
 Compiling... Ok
 Linking... Ok
 Running:
 
-Hello, Yes We Can! 🍀 
+Hello, Yes We Can! M-^_M-^MM-^@ 
 
-Completed. 👍 
+Completed. M-^_M-^QM-^M 
 Starting test for ../operations.s
 asm v1.1 (c) 2017 Gaetano Causio
 
-Compile, link and run for assemply code: [1m../operations.s[m
+Compile, link and run for assemply code: ^[[1m../operations.s^[[m
 
 Compiling... Ok
 Linking... Ok
 Running with parameters: ABC 123 just a test     
 
 
-Completed. 👍 
+Completed. M-^_M-^QM-^M 
 asm v1.1 (c) 2017 Gaetano Causio
 
-Compile, link and run for assemply code: [1m../operations.s[m
+Compile, link and run for assemply code: ^[[1m../operations.s^[[m
 
 Compiling... Ok
 Linking... Ok
 Running:
 
 
-Completed. 👍 
+Completed. M-^_M-^QM-^M 
 Starting test for ../parameters.s
 asm v1.1 (c) 2017 Gaetano Causio
 
-Compile, link and run for assemply code: [1m../parameters.s[m
+Compile, link and run for assemply code: ^[[1m../parameters.s^[[m
 
 Compiling... Ok
 Linking... Ok
@@ -81,10 +81,10 @@ argv[3]: just
 argv[2]: 123
 argv[1]: ABC
 
-Completed. 👍 
+Completed. M-^_M-^QM-^M 
 asm v1.1 (c) 2017 Gaetano Causio
 
-Compile, link and run for assemply code: [1m../parameters.s[m
+Compile, link and run for assemply code: ^[[1m../parameters.s^[[m
 
 Compiling... Ok
 Linking... Ok
@@ -92,26 +92,26 @@ Running:
 
 no parameters.
 
-Completed. 👍 
+Completed. M-^_M-^QM-^M 
 Starting test for ../registers.s
 asm v1.1 (c) 2017 Gaetano Causio
 
-Compile, link and run for assemply code: [1m../registers.s[m
+Compile, link and run for assemply code: ^[[1m../registers.s^[[m
 
 Compiling... Ok
 Linking... Ok
 Running with parameters: ABC 123 just a test     
 
 
-Completed. 👍 
+Completed. M-^_M-^QM-^M 
 asm v1.1 (c) 2017 Gaetano Causio
 
-Compile, link and run for assemply code: [1m../registers.s[m
+Compile, link and run for assemply code: ^[[1m../registers.s^[[m
 
 Compiling... Ok
 Linking... Ok
 Running:
 
 
-Completed. 👍 
+Completed. M-^_M-^QM-^M 
 END
