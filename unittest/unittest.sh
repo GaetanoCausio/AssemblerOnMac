@@ -14,6 +14,7 @@ echo
 # filter out all escape sequences and convert output to plain ASCII
 # alias FilterOut="sed 's/[\x01-\x1F\x7F]//g' | iconv -c -t ascii"
 alias FilterOut="cat -v | iconv -c -t ascii"
+# alias FilterOut="cat -v"
 
 echo "Unit Tests" | FilterOut >unittest.out
    
