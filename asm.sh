@@ -18,9 +18,9 @@ prmNorun="$2"
 prmCount=$#
 
 # set handy variables
-bold=$(tput bold)
-normal=$(tput sgr0)
-underline=$(tput smul) 
+bold="\033[1m"
+normal="\033[0m"
+underline="\033[4m" 
 baseName="${prmProgramName%.*}"
 
 echo "asm v1.1 (c) 2017 Gaetano Causio"
