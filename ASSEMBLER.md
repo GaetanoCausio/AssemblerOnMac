@@ -34,7 +34,7 @@ First of all Assembly makes extensive use of **registers** like `%esp`, `%eax` a
 `EAX ECX EDX EBX ESP EBP ESI EDI` for 32bit architecture     
 `AX  CX  DX  BX  SP  BP  SI  DI` for 16bit architecture     
 
-Registers are mostly use to address memory area locations, her some examples:
+Registers are mostly use to address memory area locations, here some examples:
 
 ```asm
 %esp             # refers to value of %esp register
@@ -44,7 +44,7 @@ Registers are mostly use to address memory area locations, her some examples:
 ```
 You can best debug assembly program `registers.s` to see more details on how it works.
 
-Registers have a special meaning and usage in Assembly langauage, it is therefore a good habit to save their content (via a push) before you change them, and then restore them back (via a pop) when done.
+Registers have a special meaning and usage in Assembly language, it is therefore a good habit to save their content (via a `push`) before you change them, and then restore them back (via a `pop`) when done.
 
 ```asm
 eax: Accumulator
@@ -76,7 +76,7 @@ sub   $8, %esp         # rsubtract 8 from value of register %esp
 dec   %edi             # decrement value of register %edi by 1
 push  %ebp             # push content of %ebp register into stack
 pop   %ebp             # pop content of %ebp register from stack
-call  _initParams      # call a subroutine at address of _initParams
+call  _initParams      # call a function at address of _initParams
 ret                    # return back to caller
 xchg %eax, %esi        # swap content of registers
 cmp  %edi,%eax         # compare contents of registers
@@ -90,13 +90,17 @@ You can best debug assembly program `operations.s` to see more details on how it
 Also note that instructions may be suffixed based on your target architecture:
 
 `movq` for 64bit architecture     
-`movl` or `mov` for 32bit architecture     
+`movl` for 32bit architecture     
 `movw` for 16bit architecture     
+
+When not specified as in `mov` it is automatically inferred from the type of registers used in the operation.
 
 ## Stack Layout
 
 It is very important to understand how the stack memory works to be able to properly code in assembly.
-The stack is used when parameters are passed to your program or when you call a subroutine. By using `push` you can add data to the stack, while using `pop` gets data from the stack. You can also directly access the stack as the `%esp` register is actually a pointer to the stack itself. Once a program is started or control is given to a subroutine `%esp` always point to the return address. When parameters are used the stack will point to the total number of arguments and to the location in memory where these arguments are stored to. Therefore a standard stack layout is as follow:
+The stack is used when parameters are passed to your program or when you call a function. By using `push` you can add data to the stack, while using `pop` gets data out from the stack. You can also directly access the stack by using the `%esp` register, which is actually a pointer to the stack itself. 
+
+Once a program is started or control is given to a function `%esp` always point to the return address. When parameters are used the stack will point to the total number of arguments and to the location in memory where these arguments are stored to. Therefore a standard stack layout can be represented as follow:
 
 ```asm
 (%esp)    -> return address
