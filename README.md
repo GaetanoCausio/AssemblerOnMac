@@ -96,7 +96,7 @@ TIP: After entering a `run` command in `lldb` try using the `gui` command as wel
 | `lldb Program` | Debug an executable program |
  
 ## What's Next
-Even more sample code...
+Dive deeper in Assembler by reading [ASSEMBLER.md](ASSEMBLER.md). 
 <BR /><BR />
 ***
 *A continuos learning path where passion is the drive.*
