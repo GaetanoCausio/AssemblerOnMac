@@ -41,4 +41,3 @@ _main:
 
     xor     %eax, %eax          # set return code to zero
     ret                         # exit
-
