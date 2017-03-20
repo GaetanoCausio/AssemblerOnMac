@@ -32,7 +32,7 @@ echo
 if [ $prmCount == 0 ] ; then # no input parameters
    echo "Wrong number of parameters. Usage is:"
    echo
-   echo "   asm ${underline}filename${normal} [norun] [parameters]"
+   echo -e "   asm ${underline}filename${normal} [norun] [parameters]"
    echo
    echo "   - filename   = name of your assemply code program"
    echo "   - norun      = use <norun> if you just need to compile & link without running it"
@@ -42,7 +42,7 @@ if [ $prmCount == 0 ] ; then # no input parameters
 fi
 
 if [ ! -r "$prmProgramName" ]; then # assembly program not readable
-   echo "Unable to access file: ${bold}$prmProgramName${normal}"
+   echo -e "Unable to access file: ${bold}$prmProgramName${normal}"
    echo
    echo "Please specify a valid file name"
    echo
