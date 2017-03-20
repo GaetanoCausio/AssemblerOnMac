@@ -52,7 +52,7 @@ fi
 # Compile and Link
 # ----------------
 
-echo "Compile, link and run for assemply code: ${bold}$prmProgramName${normal}"
+echo -e "Compile, link and run for assemply code: ${bold}$prmProgramName${normal}"
 echo
 
 echo -n "Compiling... "
