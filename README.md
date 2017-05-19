@@ -1,10 +1,10 @@
 # Assembler on a Mac? Yes We Can!
 
-[![Shippable](https://img.shields.io/badge/platform-OSX-lightgrey.svg)]()
+[![Shippable](https://img.shields.io/badge/platform-OSX-blue.svg)]()
 [![Shippable](https://img.shields.io/badge/language-asm-orange.svg)]()
 [![Shippable](https://img.shields.io/badge/build-passing-green.svg)]()
 [![Shippable](https://img.shields.io/badge/tests-passing-green.svg)]()
-[![Shippable](https://img.shields.io/badge/license-apache%202.0-blue.svg)]()
+[![Shippable](https://img.shields.io/badge/license-apache%202.0-lightgrey.svg)]()
 
 A list of sample Assembly programs that demonstrate how to program using machine code instructions. Each program in this project is well self documented. Use this README.md to get started, then jump to [ASSEMBLER.md](ASSEMBLER.md) to go further.
 
